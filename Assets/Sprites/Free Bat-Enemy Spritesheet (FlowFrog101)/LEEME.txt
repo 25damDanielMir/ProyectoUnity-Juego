@@ -1,0 +1,12 @@
+﻿Free Bat-Enemy Spritesheet (version Batv3)
+Autor: FlowFrog101
+Fuente: https://flowfrog101.itch.io/free-bat-enemy-spritesheet
+Licencia: uso comercial y no comercial permitido. Prohibido revender el sprite o usarlo para entrenar IA.
+Descargado: 23/11/2026
+
+Bat.png: tira vertical de 17 frames de 16x16 (de arriba abajo):
+  0-3   volar
+  4-8   atacar
+  9-14  morir
+  15-16 recibir golpe (el 16 es el destello blanco)
+Bat.aseprite: archivo original para editarlo en Aseprite.

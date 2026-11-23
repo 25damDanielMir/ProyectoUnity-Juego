@@ -1,0 +1,7 @@
+32X32 Dungeon Tileset
+Autor: ThatOneRandomGameDev
+Fuente: https://opengameart.org/content/32x32-dungeon-tileset-0
+Licencia: CC0 (dominio publico)
+Descargado: 23/11/2026
+
+Lo usamos para: pinchos retractiles, palancas, puertas y rejas.
