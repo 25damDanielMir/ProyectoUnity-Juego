@@ -276,6 +276,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &73169571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73169572}
+  m_Layer: 0
+  m_Name: CamaraSala1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73169572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73169571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92506202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,7 +3669,7 @@ MonoBehaviour:
   - {fileID: 2123348897}
   - {fileID: 1804977074}
   - {fileID: 344804850}
-  salaInicial: 2
+  salaInicial: 0
 --- !u!1001 &542037908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4584,6 +4615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1049551114}
   - component: {fileID: 1049551115}
+  - component: {fileID: 1049551116}
   m_Layer: 0
   m_Name: Puerta2_3
   m_TagString: Untagged
@@ -4651,6 +4683,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1049551116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049551113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51334241a39f9ba4889f423b9721eb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origen: {fileID: 1809470711}
+  destino: {fileID: 1056948800}
+  salaOrigen: {fileID: 1804977074}
+  salaDestino: {fileID: 344804850}
+--- !u!1 &1056948799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056948800}
+  m_Layer: 0
+  m_Name: CamaraSala3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056948800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056948799}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085184203
 GameObject:
   m_ObjectHideFlags: 0
@@ -7385,6 +7464,63 @@ Transform:
   - {fileID: 2093632080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1238626940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.076413
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.1586094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167655311430087237, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362804288800299633, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
+      propertyPath: m_Name
+      value: Jugador
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a23f82b670c7c444a75886603d9ab69, type: 3}
 --- !u!1 &1521324931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9568,6 +9704,37 @@ Transform:
   - {fileID: 1096182432}
   - {fileID: 458348333}
   m_Father: {fileID: 313661395}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1809470710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809470711}
+  m_Layer: 0
+  m_Name: CamaraSala2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1809470711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809470710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1868633280
 GameObject:
@@ -13650,10 +13817,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1934055700}
   - component: {fileID: 1934055701}
+  - component: {fileID: 1934055702}
   m_Layer: 0
   m_Name: Puerta1_2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13717,6 +13885,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1934055702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934055699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51334241a39f9ba4889f423b9721eb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origen: {fileID: 73169572}
+  destino: {fileID: 1809470711}
+  salaOrigen: {fileID: 2123348897}
+  salaDestino: {fileID: 1804977074}
 --- !u!1 &1955790139
 GameObject:
   m_ObjectHideFlags: 0
@@ -15586,3 +15770,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 313661395}
   - {fileID: 1167801903}
+  - {fileID: 1238626940}
+  - {fileID: 73169572}
+  - {fileID: 1809470711}
+  - {fileID: 1056948800}
