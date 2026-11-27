@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 // Enemigo basado en el Patrullante de PrimerProyecto:
 // va y viene en horizontal y, si el jugador se acerca, le persigue.
+// Lo usan el esqueleto y el murci√©lago (con distintos valores en el Inspector).
 public class Esqueleto : MonoBehaviour
 {
     public float velocidad = 1.5f;
-    public float distanciaPatrulla = 3f;   // cu·nto se aleja de donde empieza
+    public float distanciaPatrulla = 3f;   // cu√°nto se aleja de donde empieza
     public float radioVision = 4f;         // a esta distancia empieza a perseguir
 
     Vector2 inicio;
@@ -16,23 +15,31 @@ public class Esqueleto : MonoBehaviour
     Transform jugador;
     Rigidbody2D cuerpo;
     SpriteRenderer sprite;
+    Collider2D miCaja;
+    Collider2D cajaJugador;
 
     void Start()
     {
         inicio = transform.position;
         cuerpo = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        miCaja = GetComponent<Collider2D>();
 
         GameObject j = GameObject.FindWithTag("Player");
-        if (j != null) jugador = j.transform;
+        if (j != null)
+        {
+            jugador = j.transform;
+            cajaJugador = j.GetComponent<Collider2D>();
+        }
     }
 
     void Update()
     {
-        if (jugador != null && Vector2.Distance(transform.position, jugador.position) < radioVision)
+        if (jugador != null && Vector2.Distance(CentroPropio(), CentroJugador()) < radioVision)
         {
-            // Perseguir: ir en lÌnea recta hacia el jugador
-            movimiento = ((Vector2)jugador.position - (Vector2)transform.position).normalized;
+            // Perseguir: ir hacia la caja del jugador (sus pies), no hacia su posici√≥n,
+            // para que los colliders lleguen a tocarse y HacerDanno funcione.
+            movimiento = (CentroJugador() - CentroPropio()).normalized;
         }
         else
         {
@@ -52,7 +59,18 @@ public class Esqueleto : MonoBehaviour
         cuerpo.velocity = movimiento * velocidad;
     }
 
-    // Dibuja en la escena el cÌrculo de visiÛn cuando seleccionas el esqueleto
+    // Centro de su collider (tiene en cuenta el Offset), o su posici√≥n si no tiene
+    Vector2 CentroPropio()
+    {
+        return miCaja != null ? (Vector2)miCaja.bounds.center : (Vector2)transform.position;
+    }
+
+    Vector2 CentroJugador()
+    {
+        return cajaJugador != null ? (Vector2)cajaJugador.bounds.center : (Vector2)jugador.position;
+    }
+
+    // Dibuja en la escena el c√≠rculo de visi√≥n cuando seleccionas el enemigo
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
