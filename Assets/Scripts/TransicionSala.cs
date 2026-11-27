@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Va en un trigger en el hueco de la puerta. Cada vez que el jugador lo cruza,
-// la c�mara salta a la sala del otro lado y solo se ve esa sala.
+// la cámara salta a la sala del otro lado y solo se ve esa sala.
 public class TransicionSala : MonoBehaviour
 {
-    public Transform origen;        // punto de la c�mara en la sala de este lado
-    public Transform destino;       // punto de la c�mara en la sala del otro lado
+    public Transform origen;        // punto de la cámara en la sala de este lado
+    public Transform destino;       // punto de la cámara en la sala del otro lado
     public GameObject salaOrigen;   // la sala de este lado (Sala1, Sala2...)
     public GameObject salaDestino;  // la sala del otro lado
 
-    bool haCruzado;
     float temporizador;
     BoxCollider2D colision;
 
@@ -36,16 +35,16 @@ public class TransicionSala : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        if (!haCruzado)
+        // Miramos qué sala está encendida para saber hacia dónde cruza.
+        // Así funciona aunque el jugador aparezca en otra sala al volver de otro piso.
+        if (salaOrigen.activeSelf)
         {
-            haCruzado = true;
             MoverCamara(destino);
             salaDestino.SetActive(true);
             salaOrigen.SetActive(false);
         }
         else
         {
-            haCruzado = false;
             MoverCamara(origen);
             salaOrigen.SetActive(true);
             salaDestino.SetActive(false);
@@ -59,7 +58,7 @@ public class TransicionSala : MonoBehaviour
     void MoverCamara(Transform punto)
     {
         Vector3 pos = punto.position;
-        pos.z = Camera.main.transform.position.z;   // la c�mara tiene que seguir en Z = -10
+        pos.z = Camera.main.transform.position.z;   // la cámara tiene que seguir en Z = -10
         Camera.main.transform.position = pos;
     }
 }
