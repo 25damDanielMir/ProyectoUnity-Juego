@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public int vidaMax = 3;
     public int vida = 3;
 
+    // Por qu√© puerta tiene que aparecer el jugador al cargar el piso:
+    // "Entrada" (viene del piso anterior) o "Salida" (vuelve del piso siguiente)
+    public string llegada = "";
+
     float tiempoInicio;
 
     void Awake()
@@ -33,10 +37,17 @@ public class GameManager : MonoBehaviour
         puntos += cantidad;
     }
 
-    // Carga la escena que va despuÈs en Build Settings
+    // Carga la escena que va despu√©s en Build Settings
     public void SiguienteEscena()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        CambiarPiso(1);
+    }
+
+    // +1 = bajar al piso siguiente, -1 = volver al anterior
+    public void CambiarPiso(int desplazamiento)
+    {
+        llegada = desplazamiento > 0 ? "Entrada" : "Salida";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + desplazamiento);
     }
 
     public void GameOver()
@@ -46,18 +57,19 @@ public class GameManager : MonoBehaviour
 
     public void Victoria()
     {
-        // Bonus por tiempo: cuanto antes termines, m·s puntos (m·ximo 300)
+        // Bonus por tiempo: cuanto antes termines, m√°s puntos (m√°ximo 300)
         int segundos = (int)(Time.time - tiempoInicio);
         puntos += Mathf.Max(0, 300 - segundos);
         CargarSiExiste("Victoria");
     }
 
-    // Para el botÛn Jugar / Reintentar
+    // Para el bot√≥n Jugar / Reintentar
     public void NuevaPartida()
     {
         puntos = 0;
         vida = vidaMax;
         tiempoInicio = Time.time;
+        llegada = "Entrada";
         SceneManager.LoadScene("Piso1");
     }
 
