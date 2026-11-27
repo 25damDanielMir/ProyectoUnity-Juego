@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 7377870559262579983}
   - component: {fileID: 3338566465127688827}
   - component: {fileID: 709432133789666325}
+  - component: {fileID: -8164844429432064530}
+  - component: {fileID: 105317043784532782}
+  - component: {fileID: 722818542917517668}
   m_Layer: 0
   m_Name: Esqueleto
   m_TagString: Enemigo
@@ -176,6 +179,7 @@ MonoBehaviour:
   vida: 2
   esJugador: 0
   tiempoInvencible: 1
+  puntosAlMorir: 50
 --- !u!114 &709432133789666325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +193,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danno: 1
+--- !u!114 &-8164844429432064530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675746747706821123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0511ef1625a7549b0c509d8a7bf036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 1.5
+  distanciaPatrulla: 3
+  radioVision: 4
+--- !u!114 &105317043784532782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675746747706821123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0511ef1625a7549b0c509d8a7bf036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 1.5
+  distanciaPatrulla: 3
+  radioVision: 4
+--- !u!95 &722818542917517668
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675746747706821123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e017a31fe9beb248989f6de50c2d34c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
