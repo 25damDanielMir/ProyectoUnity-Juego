@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     // "Entrada" (viene del piso anterior) o "Salida" (vuelve del piso siguiente)
     public string llegada = "";
 
+    public bool tieneLlave = false;   // llave del piso actual (la reja del Piso 2)
+    public float tiempoTotal = 0;     // segundos que ha durado la partida (se ve en Victoria)
+    public float alcanceEspada = 1f;  // 1 = normal; el power-up Espada del Héroe lo sube
+
     float tiempoInicio;
 
     void Awake()
@@ -47,6 +51,7 @@ public class GameManager : MonoBehaviour
     public void CambiarPiso(int desplazamiento)
     {
         llegada = desplazamiento > 0 ? "Entrada" : "Salida";
+        tieneLlave = false;   // cada piso tiene su llave
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + desplazamiento);
     }
 
@@ -58,7 +63,8 @@ public class GameManager : MonoBehaviour
     public void Victoria()
     {
         // Bonus por tiempo: cuanto antes termines, más puntos (máximo 300)
-        int segundos = (int)(Time.time - tiempoInicio);
+        tiempoTotal = Time.time - tiempoInicio;
+        int segundos = (int)tiempoTotal;
         puntos += Mathf.Max(0, 300 - segundos);
         CargarSiExiste("Victoria");
     }
@@ -69,6 +75,9 @@ public class GameManager : MonoBehaviour
         puntos = 0;
         vida = vidaMax;
         tiempoInicio = Time.time;
+        tiempoTotal = 0;
+        tieneLlave = false;
+        alcanceEspada = 1f;
         llegada = "Entrada";
         SceneManager.LoadScene("Piso1");
     }

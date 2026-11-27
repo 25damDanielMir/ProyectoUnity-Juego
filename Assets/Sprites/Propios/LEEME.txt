@@ -1,0 +1,3 @@
+Sprites hechos por nosotros (Daniel y Pablo) para el juego.
+reja_cerrada / reja_abierta: reja de hierro entre la sala 2 y la sala 3 del Piso 2.
+fondo_menu / fondo_gameover / fondo_victoria: fondos de las pantallas, montados con tiles del juego (Tiny Tileset, OpenGameArt, Undead Executioner, Fantasy Dreamland) e iluminados a mano.

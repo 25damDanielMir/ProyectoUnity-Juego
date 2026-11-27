@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float velocidad = 4f;
     public GameObject ataque;            // el hijo "Ataque" (espada + collider)
     public float duracionAtaque = 0.3f;  // lo mismo que dura la animación AtaqueEspada
+    public float multiplicadorVelocidad = 1f;   // lo sube la Poción de Velocidad
+    public Sprite espadaMejorada;               // espada dorada del power-up Espada del Héroe
 
     Vector2 movimiento;
     Vector2 direccion = Vector2.down;    // hacia dónde mira (empieza mirando abajo)
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        cuerpo.velocity = movimiento * velocidad;
+        cuerpo.velocity = movimiento * velocidad * multiplicadorVelocidad;
     }
 
     void LeerMovimiento()
@@ -83,6 +85,11 @@ public class PlayerController : MonoBehaviour
         ataque.transform.localPosition = (Vector3)(direccion * 0.15f) + new Vector3(0, -0.3f, 0);
         ataque.transform.localRotation = Quaternion.Euler(0, 0, angulo - 90);
 
+        // Con la Espada del Héroe, la espada y su golpe son más largos (el daño es el mismo)
+        float alcance = GameManager.instancia != null ? GameManager.instancia.alcanceEspada : 1f;
+        ataque.transform.localScale = Vector3.one * alcance;
+        if (alcance > 1f && espadaMejorada != null) espada.sprite = espadaMejorada;
+
         // Si mira hacia arriba, la espada va detrás del jugador
         espada.sortingOrder = direccion.y > 0.5f ? 9 : 11;
 
@@ -92,5 +99,22 @@ public class PlayerController : MonoBehaviour
         ataque.SetActive(false);
 
         atacando = false;
+    }
+
+    // Lo llama la Poción de Velocidad
+    Coroutine aceleracion;
+
+    public void Acelerar(float multiplicador, float duracion)
+    {
+        // Si ya estaba acelerado, se vuelve a contar el tiempo desde cero
+        if (aceleracion != null) StopCoroutine(aceleracion);
+        aceleracion = StartCoroutine(Aceleracion(multiplicador, duracion));
+    }
+
+    IEnumerator Aceleracion(float multiplicador, float duracion)
+    {
+        multiplicadorVelocidad = multiplicador;
+        yield return new WaitForSeconds(duracion);
+        multiplicadorVelocidad = 1f;
     }
 }
