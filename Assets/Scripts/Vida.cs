@@ -9,6 +9,7 @@ public class Vida : MonoBehaviour
     public int vida = 3;
     public bool esJugador = false;
     public float tiempoInvencible = 1f;   // tras un golpe no recibe más daño
+    public int puntosAlMorir = 50;   // puntos que da un enemigo al morir
 
     SpriteRenderer sprite;
     bool invencible = false;
@@ -17,6 +18,13 @@ public class Vida : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         vida = vidaMax;
+
+        // El jugador recupera la vida que tenía en el piso anterior
+        if (esJugador && GameManager.instancia != null)
+        {
+            vidaMax = GameManager.instancia.vidaMax;
+            vida = GameManager.instancia.vida;
+        }
     }
 
     public void RecibirDanno(int danno)
@@ -34,12 +42,23 @@ public class Vida : MonoBehaviour
         {
             StartCoroutine(Parpadeo());
         }
+        GuardarVida();
     }
 
     // Lo usará la poción 
     public void Curar(int cantidad)
     {
         vida = Mathf.Min(vida + cantidad, vidaMax);
+        GuardarVida();
+    }
+
+    // Apunta la vida del jugador en el GameManager para el siguiente piso
+    void GuardarVida()
+    {
+        if (esJugador && GameManager.instancia != null)
+        {
+            GameManager.instancia.vida = vida;
+        }
     }
 
     // Parpadea en rojo mientras es invencible
@@ -62,11 +81,17 @@ public class Vida : MonoBehaviour
     {
         if (esJugador)
         {
-            // De momento reinicia la escena. Mañana será la pantalla de Game Over
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (GameManager.instancia != null)
+                GameManager.instancia.GameOver();
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {
+            if (GameManager.instancia != null)
+                GameManager.instancia.SumarPuntos(puntosAlMorir);
+            if (CompareTag("Jefe") && GameManager.instancia != null)
+                GameManager.instancia.Victoria();
             Destroy(gameObject);
         }
     }
