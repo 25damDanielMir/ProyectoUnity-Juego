@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Power-up: al cogerla cura un corazón y desaparece.
+// Power-up: la poción pequeña cura 1 corazón y la grande cura todos.
 public class Pocion : MonoBehaviour
 {
-    public int curacion = 1;
+    public bool esGrande = false;
 
     void OnTriggerEnter2D(Collider2D otro)
     {
         if (otro.CompareTag("Player"))
         {
-            otro.GetComponent<Vida>().Curar(curacion);
+            Vida vida = otro.GetComponent<Vida>();
+
+            if (esGrande)
+                vida.Curar(vida.vidaMax);   // cura todos los corazones
+            else
+                vida.Curar(1);              // cura un corazón
+
             Destroy(gameObject);
         }
     }
