@@ -1,9 +1,9 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-// Muestra solo una sala a la vez y centra la c·mara en ella.
+// Muestra solo una sala a la vez y centra la c√°mara en ella.
 public class GestorSalas : MonoBehaviour
 {
     public GameObject[] salas;   // Sala1, Sala2... en orden
@@ -29,7 +29,7 @@ public class GestorSalas : MonoBehaviour
     public Vector3 CentroDe(int indice)
     {
         Tilemap muros = salas[indice].transform.Find("Muros").GetComponent<Tilemap>();
-        muros.CompressBounds();   // ajusta el rect·ngulo a los tiles que hay de verdad
+        muros.CompressBounds();   // ajusta el rect√°ngulo a los tiles que hay de verdad
         return muros.transform.TransformPoint(muros.localBounds.center);
     }
 }

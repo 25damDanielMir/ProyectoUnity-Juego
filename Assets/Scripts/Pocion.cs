@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Power-up: la poci�n peque�a cura 1 coraz�n y la grande cura todos.
+// Power-up: la poción pequeña cura 1 corazón y la grande cura todos.
 public class Pocion : MonoBehaviour
 {
     public bool esGrande = false;
@@ -16,7 +16,7 @@ public class Pocion : MonoBehaviour
             if (esGrande)
                 vida.Curar(vida.vidaMax);   // cura todos los corazones
             else
-                vida.Curar(1);              // cura un coraz�n
+                vida.Curar(1);              // cura un corazón
 
             Destroy(gameObject);
         }

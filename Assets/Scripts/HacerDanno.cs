@@ -1,6 +1,6 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// Para pinchos y enemigos: hace daño al jugador al tocarlo.
+// Para pinchos y enemigos: hace daÃ±o al jugador al tocarlo.
 public class HacerDanno : MonoBehaviour
 {
     public int danno = 1;
@@ -11,7 +11,7 @@ public class HacerDanno : MonoBehaviour
         Danar(otro.gameObject);
     }
 
-    // Si el collider es sólido (enemigos)
+    // Si el collider es sÃ³lido (enemigos)
     void OnCollisionStay2D(Collision2D choque)
     {
         Danar(choque.gameObject);
