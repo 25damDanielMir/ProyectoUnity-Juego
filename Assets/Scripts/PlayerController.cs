@@ -26,18 +26,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (atacando)
-        {
-            // Mientras ataca no se mueve
-            movimiento = Vector2.zero;
-            anim.SetBool("Quieto", true);
-            return;
-        }
-
+        // El jugador puede moverse también mientras ataca
         LeerMovimiento();
         ActualizarAnimacion();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Solo se puede empezar un ataque si no hay otro en marcha
+        if (Input.GetKeyDown(KeyCode.Space) && !atacando)
         {
             StartCoroutine(Atacar());
         }
