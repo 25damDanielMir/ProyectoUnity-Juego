@@ -1,0 +1,77 @@
+﻿=====================================================
+   ECHOES OF THE FALLEN HERO  -  Demo (1a entrega)
+   Daniel y Pablo  -  DAM (Diurno) - Multimedia
+=====================================================
+
+COMO EJECUTARLO
+---------------
+1. Descomprime el .zip entero en una carpeta.
+2. Abre "Echoes of the Fallen Hero.exe".
+   (No muevas el .exe fuera de su carpeta: necesita la carpeta
+   "Echoes of the Fallen Hero_Data" que va al lado.)
+Requisitos: Windows de 64 bits.
+
+CONTROLES
+---------
+  W A S D ......... Moverse
+  ESPACIO ......... Atacar con la espada
+  Raton ........... Botones de los menus
+
+HISTORIA
+--------
+Entras en una cripta siguiendo a otro heroe que entro antes que tu
+y nunca salio. La entrada se cierra a tu espalda. Baja los tres pisos,
+encuentra lo que queda de el... y sal con vida.
+
+OBJETIVO
+--------
+Atraviesa los 3 pisos de la cripta y vence al Verdugo, el jefe final
+del Piso 3. Si te quedas sin corazones, pierdes la partida.
+
+  Piso 1 - Las catacumbas: primeros esqueletos y trampas.
+  Piso 2 - La galeria: la reja de la sala 3 esta cerrada.
+           Busca la LLAVE en el pasillo de abajo de la sala 2
+           (cuidado con los pinchos, que suben y bajan).
+  Piso 3 - La sala del Verdugo: flota hacia ti, da tajos con la
+           guadana e invoca espiritus. Aguanta 15 golpes.
+
+Las puertas en arco llevan al piso siguiente. La puerta de entrada
+del Piso 2 te devuelve al Piso 1.
+
+VIDA
+----
+Tienes 3 corazones (arriba a la izquierda). Tras un golpe parpadeas
+en rojo y durante un momento no recibes mas dano.
+
+OBJETOS
+-------
+  Pocion pequena (roja) ...... Cura 1 corazon
+  Pocion grande .............. Cura todos los corazones
+  Pocion de velocidad (azul) . +50% de velocidad durante 10 segundos
+  Espada del Heroe (dorada) .. Tu espada pasa a ser el doble de larga
+                               hasta el final de la partida
+  Llave ...................... Abre la reja del Piso 2
+
+PUNTUACION
+----------
+  Esqueleto / murcielago ..... +50
+  Espiritu del jefe .......... +10
+  Llave ...................... +25
+  Power-up ................... +20
+  Verdugo (jefe final) ....... +200
+  Bonus por tiempo ........... hasta +300 (cuanto antes acabes, mas)
+Al ganar veras tus puntos y el tiempo que has tardado.
+
+CREDITOS
+--------
+Programacion y diseno: Daniel y Pablo.
+Assets gratuitos (enlaces y licencias en el documento de diseno):
+  - Tiny Tileset: Dungeon Tileset LITE y Top-Down Monsters LITE
+  - 0x72: 16x16 DungeonTileset II (CC0)
+  - ThatOneRandomGameDev: 32X32 Dungeon Tileset (CC0, OpenGameArt)
+  - ElvGames: Free Character Sprites - Fantasy Dreamland
+  - FlowFrog101: Free Bat-Enemy Spritesheet
+  - Kronovi-: Boss Undead Executioner
+  - dustdfg: Pixel Art Keys (CC0)
+  - Musica (CC0, OpenGameArt): Ruhinre, EZduzziteh, CleytonKauffman
+  - Reja y fondos de las pantallas: hechos por nosotros
